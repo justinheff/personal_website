@@ -1,0 +1,43 @@
+<html>
+<script type="text/javascript" src="RLBlackjack.js"></script>
+<script type="text/javascript" src="RLGUI.js"></script>
+<script type="text/javascript" src="Environment.js"></script>
+<script type="text/javascript" src="GUI.js"></script>
+
+<head>
+    <style>
+    table {
+        font: 12px courier, sans-serif;
+    }
+    
+    th, td {
+        text-align: center;
+        width: 100px;
+        height: 20px;
+    }
+    
+    tr:nth-child(odd){background-color: #f2f2f2}
+    </style>
+</head>
+
+<script>
+init = function() {
+    self.RLGUI = RLGUI(document.getElementById("container"), Environment());
+    self.RLGUI.RL.state = self.RLGUI.RL.getRandomState();
+    self.RLGUI.tableCreate();
+    setInterval(update, 1000/60);
+    function update() {
+        self.RLGUI.draw();
+        //self.RLGUI.RL.learningIteration();
+        //self.RLGUI.tableUpdate();
+    }
+}
+</script>
+
+<body onload="init()">
+<table id='blackjackTable' border='1'></table>
+<table id='winLossTable' border='1'></table>
+
+<div id="container"></div>
+</body>
+</html>
