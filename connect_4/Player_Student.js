@@ -1,7 +1,4 @@
-// Player_Student.js 
-// Computer Science 3200 - Assignment 3
-// Author(s): Tim Griffin, 200727279, n55thg
-//            Justin Heffernan, 201526514, jdh668
+
 
 Player_Student = function(config) {
     let self = {};
